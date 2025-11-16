@@ -19,5 +19,13 @@ public class TeamController {
 
     @PostMapping
     public Team create(@RequestBody Team t) { return teamService.save(t); }
+
+
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable Long id) {
+        teamService.deleteById(id);
+        return "Team deleted successfully";
+    }
 }
 

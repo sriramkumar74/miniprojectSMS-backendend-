@@ -13,4 +13,8 @@ public class MatchService {
 
     public List<Match> findAll() { return repo.findAll(); }
     public Match save(Match m) { return repo.save(m); }
+    public void deleteById(Long id) {
+        repo.deleteById(id);
+    }
+
 }

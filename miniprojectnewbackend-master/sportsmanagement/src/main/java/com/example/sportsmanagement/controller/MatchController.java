@@ -14,9 +14,17 @@ public class MatchController {
     @Autowired
     private MatchService matchService;
 
+
     @GetMapping
     public List<Match> list() { return matchService.findAll(); }
 
     @PostMapping
-    public Match create(@RequestBody Match m) { return matchService.save(m); }
+    public Match create(@RequestBody Match match) { return matchService.save(match); }
+
+    @DeleteMapping("/{id}")
+    public String deleteMatch(@PathVariable Long id) {
+        matchService.deleteById(id);
+        return "Match deleted successfully";
+    }
+
 }

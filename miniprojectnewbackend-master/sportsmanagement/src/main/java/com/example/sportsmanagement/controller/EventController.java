@@ -19,4 +19,9 @@ public class EventController {
 
     @PostMapping
     public Event create(@RequestBody Event e) { return eventService.save(e); }
+    @DeleteMapping("/{id}")
+    public String deleteEvent(@PathVariable Long id) {
+        eventService.deleteById(id);
+        return "Event deleted successfully";
+    }
 }

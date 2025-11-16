@@ -6,18 +6,18 @@ import lombok.*;
 
 @Entity
 @Table(name = "match_table")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Match {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; // primary key
 
-    private Long eventId;
-    private Long teamA;
-    private Long teamB;
+    private String teamA;
+    private String teamB;
     private String matchDate; // ISO datetime string
-    private Integer scoreA;
-    private Integer scoreB;
-    private String status;
+    private String venue;
 }
-

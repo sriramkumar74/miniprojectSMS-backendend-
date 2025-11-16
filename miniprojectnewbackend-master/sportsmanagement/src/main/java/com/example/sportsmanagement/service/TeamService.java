@@ -13,4 +13,7 @@ public class TeamService {
 
     public List<Team> findAll() { return repo.findAll(); }
     public Team save(Team t) { return repo.save(t); }
+    public void deleteById(Long id) {
+        repo.deleteById(id);
+    }
 }
